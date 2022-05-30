@@ -1,0 +1,134 @@
+30 мая 2022 - 16:16:59.513 - com.company.ApelsinApplication -  INFO  - Starting ApelsinApplication using Java 17.0.3 on DESKTOP-OGCJ8KA with PID 16468 (F:\java\Apelsin\target\classes started by NURKEN in F:\java\Apelsin)
+30 мая 2022 - 16:16:59.519 - com.company.ApelsinApplication -  DEBUG - Running with Spring Boot v2.7.0, Spring v5.3.20
+30 мая 2022 - 16:16:59.520 - com.company.ApelsinApplication -  INFO  - The following 1 profile is active: "dev"
+30 мая 2022 - 16:17:01.448 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+30 мая 2022 - 16:17:01.487 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+30 мая 2022 - 16:17:03.003 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat initialized with port(s): 8080 (http)
+30 мая 2022 - 16:17:03.026 - o.a.catalina.core.StandardService -  INFO  - Starting service [Tomcat]
+30 мая 2022 - 16:17:03.026 - o.a.catalina.core.StandardEngine -  INFO  - Starting Servlet engine: [Apache Tomcat/9.0.63]
+30 мая 2022 - 16:17:03.280 - o.a.c.c.C.[Tomcat].[localhost].[/] -  INFO  - Initializing Spring embedded WebApplicationContext
+30 мая 2022 - 16:17:03.281 - o.s.b.w.s.c.ServletWebServerApplicationContext -  INFO  - Root WebApplicationContext: initialization completed in 3574 ms
+30 мая 2022 - 16:17:03.659 - o.h.jpa.internal.util.LogHelper -  INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+30 мая 2022 - 16:17:03.766 - org.hibernate.Version -  INFO  - HHH000412: Hibernate ORM core version 5.6.9.Final
+30 мая 2022 - 16:17:04.084 - o.h.annotations.common.Version -  INFO  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+30 мая 2022 - 16:17:04.275 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Starting...
+30 мая 2022 - 16:17:04.634 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Start completed.
+30 мая 2022 - 16:17:04.700 - org.hibernate.dialect.Dialect -  INFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+30 мая 2022 - 16:17:04.774 - Hibernate Types -  INFO  - This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+30 мая 2022 - 16:17:05.067 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  ERROR - Failed to initialize JPA EntityManagerFactory: No identifier specified for entity: com.company.entity.ProfileEntity
+30 мая 2022 - 16:17:05.068 - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -  WARN  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.company.entity.ProfileEntity
+30 мая 2022 - 16:17:05.069 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+30 мая 2022 - 16:17:05.157 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
+30 мая 2022 - 16:17:05.163 - o.a.catalina.core.StandardService -  INFO  - Stopping service [Tomcat]
+30 мая 2022 - 16:17:05.190 - o.s.b.a.l.ConditionEvaluationReportLoggingListener -  INFO  - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+30 мая 2022 - 16:17:05.229 - o.s.boot.SpringApplication -  ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.company.entity.ProfileEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.company.ApelsinApplication.main(ApelsinApplication.java:10)
+Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.company.entity.ProfileEntity
+	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266)
+	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:772)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 16 common frames omitted
+30 мая 2022 - 16:17:35.790 - com.company.ApelsinApplication -  INFO  - Starting ApelsinApplication using Java 17.0.3 on DESKTOP-OGCJ8KA with PID 17712 (F:\java\Apelsin\target\classes started by NURKEN in F:\java\Apelsin)
+30 мая 2022 - 16:17:35.794 - com.company.ApelsinApplication -  DEBUG - Running with Spring Boot v2.7.0, Spring v5.3.20
+30 мая 2022 - 16:17:35.795 - com.company.ApelsinApplication -  INFO  - The following 1 profile is active: "dev"
+30 мая 2022 - 16:17:37.811 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+30 мая 2022 - 16:17:37.856 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+30 мая 2022 - 16:17:39.273 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat initialized with port(s): 8080 (http)
+30 мая 2022 - 16:17:39.291 - o.a.catalina.core.StandardService -  INFO  - Starting service [Tomcat]
+30 мая 2022 - 16:17:39.292 - o.a.catalina.core.StandardEngine -  INFO  - Starting Servlet engine: [Apache Tomcat/9.0.63]
+30 мая 2022 - 16:17:39.549 - o.a.c.c.C.[Tomcat].[localhost].[/] -  INFO  - Initializing Spring embedded WebApplicationContext
+30 мая 2022 - 16:17:39.549 - o.s.b.w.s.c.ServletWebServerApplicationContext -  INFO  - Root WebApplicationContext: initialization completed in 3599 ms
+30 мая 2022 - 16:17:39.917 - o.h.jpa.internal.util.LogHelper -  INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+30 мая 2022 - 16:17:40.032 - org.hibernate.Version -  INFO  - HHH000412: Hibernate ORM core version 5.6.9.Final
+30 мая 2022 - 16:17:40.361 - o.h.annotations.common.Version -  INFO  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+30 мая 2022 - 16:17:40.630 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Starting...
+30 мая 2022 - 16:17:41.040 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Start completed.
+30 мая 2022 - 16:17:41.097 - org.hibernate.dialect.Dialect -  INFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+30 мая 2022 - 16:17:41.163 - Hibernate Types -  INFO  - This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+30 мая 2022 - 16:17:41.501 - org.hibernate.id.UUIDHexGenerator -  WARN  - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+30 мая 2022 - 16:17:42.659 - o.h.e.t.j.p.i.JtaPlatformInitiator -  INFO  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+30 мая 2022 - 16:17:42.669 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+30 мая 2022 - 16:17:43.101 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -  WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+30 мая 2022 - 16:17:43.905 - o.s.b.a.s.s.UserDetailsServiceAutoConfiguration -  WARN  - 
+
+Using generated security password: f9682cdf-85d9-425b-b16d-7a10c1f84a72
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+30 мая 2022 - 16:17:44.086 - o.s.s.web.DefaultSecurityFilterChain -  INFO  - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d4e424e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@799206ad, org.springframework.security.web.context.SecurityContextPersistenceFilter@633cad4d, org.springframework.security.web.header.HeaderWriterFilter@270be080, org.springframework.security.web.csrf.CsrfFilter@180fb796, org.springframework.security.web.authentication.logout.LogoutFilter@4edd8a0a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e741d6b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4e826fd4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@60251ddb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@16024b49, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b86f4cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@468646ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2059c3ff, org.springframework.security.web.session.SessionManagementFilter@78f35e39, org.springframework.security.web.access.ExceptionTranslationFilter@623ded82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d7772d3]
+30 мая 2022 - 16:17:44.301 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat started on port(s): 8080 (http) with context path ''
+30 мая 2022 - 16:17:44.708 - com.company.ApelsinApplication -  INFO  - Started ApelsinApplication in 9.876 seconds (JVM running for 10.777)
+30 мая 2022 - 16:17:47.576 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+30 мая 2022 - 16:17:47.581 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+30 мая 2022 - 16:17:47.617 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
