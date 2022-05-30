@@ -1,6 +1,7 @@
 package com.company.dto.response;
 
 import com.company.dto.request.ProfileRequestDTO;
+import com.company.enums.ProfileStatus;
 import com.company.enums.StatusEnum;
 import lombok.Data;
 
@@ -11,5 +12,5 @@ import java.time.LocalDateTime;
 public class ProfileResponseDTO extends ProfileRequestDTO {
     private String id;
     private LocalDateTime createdDate;
-    private StatusEnum status;
+    private ProfileStatus status;
 }

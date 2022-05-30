@@ -1,11 +1,11 @@
 package com.company.entity;
 
+import com.company.enums.ProfileRole;
+import com.company.enums.ProfileStatus;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -18,5 +18,11 @@ public class ProfileEntity extends BestEntity{
     private String surname;
     @Column
     private String phone;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private ProfileStatus status;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private ProfileRole role;
 
 }

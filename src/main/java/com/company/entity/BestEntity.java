@@ -22,6 +22,5 @@ public class BestEntity {
     @Column(name = "created_date")
     protected LocalDateTime createdDate = LocalDateTime.now();
     @Column
-    @Enumerated(EnumType.STRING)
-    protected StatusEnum status;
+    protected Boolean visible = true;
 }
