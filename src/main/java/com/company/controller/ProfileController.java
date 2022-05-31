@@ -55,7 +55,7 @@ public class ProfileController {
         return ResponseEntity.ok(profileService.delete(id));
     }
 
-    @ApiOperation(value = "Get by id", notes = "Method: by Profile id")
+    @ApiOperation(value = "Change Status", notes = "Method: by Profile id")
     @PutMapping("/{id}")
     public ResponseEntity<?> changeStatus(@PathVariable("id") String id,
                                           @RequestBody ProfileChangeStatusRequestDTO requestDTO,
