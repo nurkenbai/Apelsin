@@ -6,13 +6,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "card_apelsin")
-public class CardEntity extends BestEntity {
+public class CardEntity extends BaseEntity {
     @Column
     private String name;
     @Column

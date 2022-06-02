@@ -15,10 +15,10 @@ Authorization: Basic bank bankjon
 Content-Type: application/json
 
 {
-  "name": "Val",
-  "surname": "Valov",
-  "middleName": "Valvich",
-  "phone": "+998999632355"
+  "name": "Toshmat",
+  "surname": "Toshmatov",
+  "middleName": "Toshmatovich",
+  "phone": "+998990000000"
 }
 
 ### get by id

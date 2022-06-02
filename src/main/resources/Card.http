@@ -1,6 +1,5 @@
 ### create
-POST http://localhost:8080/v1/card
-Authorization: Basic bank bankjon
+POST http://localhost:9091/v1/card
 Content-Type: application/json
 
 {
@@ -10,6 +9,9 @@ Content-Type: application/json
 
 ### getBy
 GET http://localhost:8080/v1/card/8a8a81d68103ec11018103ecc7550001
+### getBy
+GET http://167.172.66.39:9091/v1/card/
+Authorization: Basic bank bankjon
 
 ### getByCardNumber
 GET http://localhost:8080/v1/card/getByCardNumber/8600-8905-6521-4797

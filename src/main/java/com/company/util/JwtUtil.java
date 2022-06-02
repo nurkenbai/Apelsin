@@ -12,15 +12,15 @@ import java.util.Date;
 public class JwtUtil {
     private final static String secretKey = "kalitso'z";
 
-    public static String encode(Integer id, ProfileRole role) {
+    public static String encode(String  id, ProfileRole role) {
         return doEncode(id, role, 60);
     }
 
-    public static String encode(Integer id) {
+    public static String encode(String  id) {
         return doEncode(id, null, 30);
     }
 
-    public static String doEncode(Integer id, ProfileRole role, long minute) {
+    public static String doEncode(String  id, ProfileRole role, long minute) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.setSubject(String.valueOf(id));
         jwtBuilder.setIssuedAt(new Date());
@@ -46,7 +46,7 @@ public class JwtUtil {
         String id = claims.getSubject();
         String role = String.valueOf(claims.get("role"));
 
-        return new ProfileJwtDTO(Integer.parseInt(id), ProfileRole.valueOf(role));
+        return new ProfileJwtDTO(id, ProfileRole.valueOf(role));
     }
 
     public static Integer decodeAndGetId(String jwt) {
@@ -61,7 +61,7 @@ public class JwtUtil {
         return Integer.parseInt(id);
     }
 
-    public static Integer getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRoles) {
+    public static String  getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRoles) {
         try {
             ProfileJwtDTO dto = (ProfileJwtDTO) request.getAttribute("profileJwtDto");
             if (requiredRoles == null || requiredRoles.length == 0) {

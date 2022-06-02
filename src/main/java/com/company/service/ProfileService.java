@@ -39,6 +39,13 @@ public class ProfileService {
         });
         return toDTO(entity);
     }
+    public ProfileEntity get(String id) {
+        ProfileEntity entity = profileRepository.findByIdAndVisible(id, true).orElseThrow(() -> {
+            log.warn("Profile id not found");
+            throw new ItemNotFoundException("Profile id not found");
+        });
+        return entity;
+    }
 
     public List<ProfileResponseDTO> getAll() {
         List<ProfileResponseDTO> profileList = new LinkedList<>();
@@ -67,6 +74,10 @@ public class ProfileService {
         responseDTO.setPhone(entity.getPhone());
         responseDTO.setCreatedDate(entity.getCreatedDate());
         return responseDTO;
+    }
+    public ProfileEntity getByPhone(String phone) {
+        return profileRepository.findByPhone(phone)
+                .orElseThrow(() -> new ItemNotFoundException("Not Found!"));
     }
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Table(name = "Category")
-public class CategoryEntity extends BestEntity{
+public class CategoryEntity extends BaseEntity {
     @Column(name = "name_uz")
     private String nameUz;
     @Column(name = "name_ru")

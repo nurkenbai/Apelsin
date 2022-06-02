@@ -4,12 +4,17 @@ import com.company.dto.request.CardRequestDTO;
 import com.company.dto.response.CardResponseDTO;
 import com.company.entity.CardEntity;
 import com.company.enums.CardStatus;
+import com.company.exception.AppBadRequestException;
 import com.company.exception.InsufficientFundsException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.CardRepository;
+import com.company.service.integration.UzCardService;
+import com.company.util.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -23,24 +28,31 @@ public class CardService {
     private CardRepository cardRepository;
     private final int min = 1000;
     private final int max = 9999;
+    @Autowired
+    private UzCardService uzCardService;
 
 
+    public CardResponseDTO create(CardRequestDTO requestDTO,String pid) {
+        CardResponseDTO card = uzCardService.getCard(requestDTO.getNumber());
 
-    public CardResponseDTO create(CardRequestDTO requestDTO) {
-
-
-        CardEntity entity = new CardEntity();
-        entity.setNumber(getCardNumber());
-        entity.setBalance(requestDTO.getBalance());
-        entity.setProfileId(requestDTO.getProfileId());
-
-        LocalDate localDate = LocalDate.now();
-        entity.setExpiryDate(localDate.plusYears(3));
-        if (requestDTO.getBalance() > 0) {
-            entity.setStatus(CardStatus.ACTIVE);
-        } else {
-            entity.setStatus(CardStatus.BLOCK);
+        if (!card.getStatus().equals(CardStatus.ACTIVE)) {
+            throw new AppBadRequestException("Card Not Active");
         }
+
+        if (!DateUtil.checkExpiredDate(requestDTO.getExpiryDate(), card.getExpiryDates())) {
+            throw new AppBadRequestException("Expired date wrong");
+        }
+        CardEntity entity = new CardEntity();
+        entity.setNumber(card.getNumber());
+        entity.setBalance(card.getBalance());
+        entity.setPhone(card.getPhone());
+        entity.setCreatedDate(card.getCreatedDate());
+        entity.setExpiryDate(card.getExpiryDates());
+        entity.setStatus(card.getStatus());
+
+        entity.setProfileId(pid);
+        entity.setName(requestDTO.getName());
+
         cardRepository.save(entity);
         return toDTO(entity);
     }
@@ -120,7 +132,6 @@ public class CardService {
     }
 
 
-
     public Boolean chengStatus(CardStatus status, String id) {
         int n = cardRepository.chengStatus(status, id);
         return n > 0;
@@ -145,8 +156,9 @@ public class CardService {
         responseDTO.setNumber(entity.getNumber());
         responseDTO.setCreatedDate(entity.getCreatedDate());
         responseDTO.setStatus(entity.getStatus());
-        responseDTO.setExpiryDate(entity.getExpiryDate());
+        responseDTO.setExpiryDates(entity.getExpiryDate());
         responseDTO.setBalance(entity.getBalance());
         return responseDTO;
     }
+
 }

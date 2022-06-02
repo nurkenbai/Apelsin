@@ -11,13 +11,15 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "profile")
-public class ProfileEntity extends BestEntity{
+public class ProfileEntity extends BaseEntity {
     @Column
     private String name;
     @Column
     private String surname;
     @Column
     private String phone;
+    @Column
+    private String password;
     @Column
     @Enumerated(EnumType.STRING)
     private ProfileStatus status;

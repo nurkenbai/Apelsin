@@ -2,12 +2,10 @@ package com.company.repository;
 
 import com.company.entity.CardEntity;
 import com.company.enums.CardStatus;
-import com.company.enums.StatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.security.core.parameters.P;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -44,5 +42,5 @@ public interface CardRepository extends JpaRepository<CardEntity, String> {
     @Transactional
     @Modifying
     @Query("update CardEntity set balance = balance+:amount where id = :cid")
-    int paymentPlus(@Param("amount") Long amount, @P("cid") String cid);
+    int paymentPlus(@Param("amount") Long amount, @Param("cid") String cid);
 }

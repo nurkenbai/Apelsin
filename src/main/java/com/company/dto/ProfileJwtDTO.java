@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfileJwtDTO {
-    private Integer id;
+    private String  id;
     private ProfileRole role;
 }
